@@ -1,0 +1,13 @@
+title = "Custom Gitleaks Configuration"
+description = "Basic rule for detecting hardcoded secrets"
+version = 2
+
+[[rules]]
+id = "custom-api-key"
+description = "Detect generic API keys"
+regex = '''(?i)apikey\s*=\s*["']?[a-z0-9_\-]{16,}["']?'''
+tags = ["apikey", "custom"]
+
+[allowlist]
+description = "Ignore specific files"
+paths = ["README.md"]
